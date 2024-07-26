@@ -1,5 +1,6 @@
 grades = [55, 70, 65, 40, 90, 85, 50, 77]
 
-passed_with_bonus = [grade * 1.05 for grade in grades if grade >= 60]
+passed_with_bonus = list(filter(lambda x: x > 60, grades))
+passed_with_bonus = list(map(lambda x: round(x*1.05, 2), passed_with_bonus))
 
-print("Grades after filtering and applying bonus:", passed_with_bonus)
+print(passed_with_bonus)
